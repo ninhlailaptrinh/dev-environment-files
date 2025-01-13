@@ -54,8 +54,8 @@ scoop install wezterm
 Nerd font:
 
 ```powershell
-scoop install nerd-fonts
-brew install font-meslo-lg-nerd-font
+scoop bucket add nerd-fonts
+scoop install nerd-fonts/JetBrainsMono-NF-Mono
 ```
 ## ArchLinux WSL2
 Neovim:
@@ -74,6 +74,41 @@ Node/Npm:
 
 ```zsh
 sudo pacman -S node
+```
+## ArchLinux WSL2
+
+Winyank (để copy từ WSL2 vào clipboard Windows):
+
+```zsh
+# Tải win32yank
+curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
+
+# Giải nén
+unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
+
+# Cấp quyền thực thi và di chuyển vào /usr/local/bin
+chmod +x /tmp/win32yank.exe
+sudo mv /tmp/win32yank.exe /usr/local/bin/
+
+# Xóa file zip tạm
+rm /tmp/win32yank.zip
+```
+
+Sau khi cài đặt, thêm dòng sau vào file ~/.config/nvim/init.lua:
+
+```lua
+vim.g.clipboard = {
+  name = 'win32yank',
+  copy = {
+    ['+'] = 'win32yank.exe -i --crlf',
+    ['*'] = 'win32yank.exe -i --crlf',
+  },
+  paste = {
+    ['+'] = 'win32yank.exe -o --lf',
+    ['*'] = 'win32yank.exe -o --lf',
+  },
+  cache_enabled = 0,
+}
 ```
 
 ## Plugins
