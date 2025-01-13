@@ -19,9 +19,6 @@ return {
       -- enable autotagging (w/ nvim-ts-autotag plugin)
       autotag = {
         enable = true,
-        enable_rename = true,
-        enable_close = true,
-        enable_close_on_slash = true,
       },
       -- ensure these language parsers are installed
       ensure_installed = {

@@ -2,7 +2,7 @@ vim.cmd("let g:netrw_liststyle = 3")
 
 local opt = vim.opt
 
-opt.relativenumber = false
+opt.relativenumber = true
 opt.number = true
 
 -- tabs & indentation
@@ -35,6 +35,14 @@ opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
+-- turn off swapfile
+opt.swapfile = false
+
+--encoding UTF-8
+vim.opt.fileencoding = "utf-8"
+vim.opt.encoding = "utf-8"
+
+-- clipboard window
 vim.g.clipboard = {
   name = "win32yank-wsl",
   copy = {

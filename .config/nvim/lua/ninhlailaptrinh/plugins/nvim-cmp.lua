@@ -66,7 +66,7 @@ return {
         { name = "luasnip", priority = 750 },
         { name = "buffer", priority = 500 },
         { name = "path", priority = 250 },
-        { name = "nvim_lsp_signature_help" }
+        { name = "nvim_lsp_signature_help" },
       }),
 
       -- configure lspkind for vs-code like pictograms in completion menu
@@ -80,20 +80,20 @@ return {
               nvim_lsp = "[LSP]",
               luasnip = "[Snippet]",
               buffer = "[Buffer]",
-              path = "[Path]"
+              path = "[Path]",
             })[entry.source.name]
             return vim_item
-          end
-        })
-      }
+          end,
+        }),
+      },
     })
 
     cmp.setup.cmdline(":", {
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
         { name = "path" },
-        { name = "cmdline" }
-      })
+        { name = "cmdline" },
+      }),
     })
-  end
+  end,
 }

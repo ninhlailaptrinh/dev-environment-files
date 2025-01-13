@@ -21,9 +21,3 @@ keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" 
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
-
-vim.keymap.set("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<cr>")
-vim.keymap.set("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<cr>")
-vim.keymap.set("n", "<leader>3", "<cmd>BufferLineGoToBuffer 3<cr>")
-vim.keymap.set("n", "<leader>4", "<cmd>BufferLineGoToBuffer 4<cr>")
-vim.keymap.set("n", "<leader>5", "<cmd>BufferLineGoToBuffer 5<cr>")

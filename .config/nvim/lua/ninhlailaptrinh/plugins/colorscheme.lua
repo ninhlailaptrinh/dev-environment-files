@@ -2,7 +2,7 @@ return {
   "folke/tokyonight.nvim",
   priority = 1000,
   config = function()
-    local transparent = true -- set to true if you would like to enable transparency
+    local transparent = false -- set to true if you would like to enable transparency
 
     local bg = "#011628"
     local bg_dark = "#011423"
@@ -39,7 +39,7 @@ return {
         colors.fg_sidebar = fg_dark
       end,
       on_highlights = function(highlights)
-        highlights.CursorLine = { bg = "none", fg = "none", sp = "none" }
+        -- highlights.CursorLine = { bg = "none", fg = "none", sp = "none" }
         highlights.CursorLineNr = { bg = "none", fg = "#abb2bf" }
       end,
     })
