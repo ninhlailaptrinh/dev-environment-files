@@ -67,13 +67,17 @@ sudo pacman -S neovim
 Ripgrep:
 
 ```zsh
-sudo pacman -S ripgrep
+sudo pacman -S ripgrep bat fzf lazygit thefuck
 ```
 
 Node/Npm:
 
 ```zsh
-sudo pacman -S node
+sudo pacman -S nodejs npm 
+```
+Python:
+```
+sudo pacman -S python python-pip
 ```
 ## ArchLinux WSL2
 
