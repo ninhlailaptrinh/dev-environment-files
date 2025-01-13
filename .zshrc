@@ -109,24 +109,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-export PATH="$HOME/.local/bin:$PATH"
-
+# Fzf config
 export FZF_DEFAULT_OPTS="--preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 
 ff() { fzf | xargs -r nvim; }
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Cấu hình clipboard aliases
-alias pbcopy='wl-copy'
-alias pbpaste='wl-paste'
-
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-export EDITOR=nvim
-
+# Yazi
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
@@ -135,10 +123,26 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
-export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
-export PATH=$PATH:~/.npm-global/bin
-. "/home/ninhlailaptrinh/.deno/env"
 
-# Alias cho MongoDB
-alias mongosh="mongod --dbpath /data/db --bind_ip 0.0.0.0 --port 27017"
-alias mongorun="mongosh"
+# Neovim
+export EDITOR=nvim
+
+# Clipboard 
+# Cấu hình clipboard aliases
+alias pbcopy='wl-copy'
+alias pbpaste='wl-paste'
+
+export PATH="$HOME/.local/bin:$PATH"
+
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+# Zoxide
+eval "$(zoxide init zsh)"
+# The fuck 
+# thefuck alias
+eval $(thefuck --alias)
+eval $(thefuck --alias fk)
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
