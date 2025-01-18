@@ -47,7 +47,9 @@ Nếu bạn đang dùng Windows, như tôi, bạn có thể cài đặt wezterm,
 
 Windows Terminal:
 
-```powershell
+```powershell and Scoop
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 scoop install wezterm
 ```
 
