@@ -51,6 +51,8 @@ Windows Terminal:
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 scoop install wezterm
+wsl --install
+Arch Linux
 ```
 
 Nerd font:
@@ -63,6 +65,7 @@ scoop install nerd-fonts/JetBrainsMono-NF-Mono
 Neovim:
 
 ```zsh
+sudo pacman -Suyy
 sudo pacman -S neovim
 ```
 
