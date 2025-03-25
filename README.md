@@ -66,13 +66,13 @@ Neovim:
 
 ```zsh
 sudo pacman -Suyy
-sudo pacman -S neovim
+sudo pacman -S neovim 
 ```
 
 Ripgrep:
 
 ```zsh
-sudo pacman -S ripgrep bat fzf lazygit thefuck
+sudo pacman -S ripgrep bat fzf lazygit unzip
 ```
 
 Node/Npm:
@@ -81,7 +81,7 @@ Node/Npm:
 sudo pacman -S nodejs npm 
 ```
 Python:
-```
+```zsh
 sudo pacman -S python python-pip
 ```
 ## ArchLinux WSL2
@@ -128,7 +128,11 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 source ~/.zshrc
 ```
-
+Tmux:
+```
+sudo pacman -S tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
 
 ## Plugins
 
