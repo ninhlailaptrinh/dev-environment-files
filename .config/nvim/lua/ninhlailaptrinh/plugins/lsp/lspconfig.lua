@@ -66,17 +66,34 @@ return {
         keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
       end,
     })
+    
 
     -- used to enable autocompletion (assign to every lsp server config)
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
     -- Change the Diagnostic symbols in the sign column (gutter)
-    -- (not in youtube nvim video)
-    local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-    for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-    end
+    vim.diagnostic.config({
+        signs = {
+                text = {
+                        [vim.diagnostic.severity.ERROR] = " ",
+                        [vim.diagnostic.severity.WARN] = " ",
+                        [vim.diagnostic.severity.INFO] = "󰋼 ",
+                        [vim.diagnostic.severity.HINT] = "󰌵 ",
+                },
+                texthl = {
+                        [vim.diagnostic.severity.ERROR] = "Error",
+                        [vim.diagnostic.severity.WARN] = "Error",
+                        [vim.diagnostic.severity.HINT] = "Hint",
+                        [vim.diagnostic.severity.INFO] = "Info",
+                },
+                numhl = {
+                        [vim.diagnostic.severity.ERROR] = "",
+                        [vim.diagnostic.severity.WARN] = "",
+                        [vim.diagnostic.severity.HINT] = "",
+                        [vim.diagnostic.severity.INFO] = "",
+                },
+        },
+})
 
     mason_lspconfig.setup_handlers({
       -- default handler for installed servers
