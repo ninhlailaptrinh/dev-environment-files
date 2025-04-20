@@ -4,40 +4,8 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 local act = wezterm.action
--- This is where you actually apply your config choices
---config.default_prog = {
---'pwsh.exe',
---'-NoLogo'
---}
---config.default_prog = { "wsl.exe", "-d", "Arch" }
--- Định nghĩa các shell
-local shell_configs = {
-	pwsh = {
-		"pwsh.exe",
-		"-NoLogo",
-	},
-	arch = {
-		"wsl.exe",
-		"-d",
-		"Arch",
-	},
-}
-
--- Mặc định dùng PowerShell
-config.default_prog = shell_configs.pwsh
-
--- Thêm custom command
-config.launch_menu = {
-	{
-		label = "PowerShell",
-		args = shell_configs.pwsh,
-	},
-	{
-		label = "Arch Linux",
-		args = shell_configs.arch,
-	},
-}
-
+--Archlinux
+config.default_prog = { "wsl.exe", "-d", "Arch" }
 -- my coolnight colorscheme
 config.colors = {
 	foreground = "#CBE0F0",
